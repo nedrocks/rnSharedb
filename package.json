@@ -8,6 +8,7 @@
   "dependencies": {
     "apsl-react-native-button": "^3.0.0",
     "events": "^1.1.1",
+    "racer": "^0.9.0",
     "react": "15.2.1",
     "react-native": "0.31.0",
     "sharedb": "^1.0.0-beta.4"
