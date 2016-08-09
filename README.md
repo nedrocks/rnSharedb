@@ -30,3 +30,8 @@ Setting up android is quite a bit more laborious due to hardcoded versions of th
 # See it working
 
 So now that you have your systems working, you can see the updates happening in real time within browser or either app!
+
+
+# Racer
+
+(branch: `race`) Hooking up with racer doesn't work completely yet, but to get the basic connection working, make sure you use the project found at https://www.github.com/nedrocks/racer-examples and run `node pad/server.js`. There is a simple change from master that allows for the initial connection to return a JSON blob instead of an HTML page. Note that once connected, an exception is thrown in iOS trying to cast NSDictionary -> NSString.
