@@ -7,8 +7,10 @@
   },
   "dependencies": {
     "apsl-react-native-button": "^3.0.0",
+    "buffer": "^4.9.0",
     "events": "^1.1.1",
-    "racer": "^0.9.0",
+    "racer": "github:nedrocks/racer",
+    "racer-browserchannel": "github:nedrocks/racer-browserchannel",
     "react": "15.2.1",
     "react-native": "0.31.0",
     "sharedb": "^1.0.0-beta.4"

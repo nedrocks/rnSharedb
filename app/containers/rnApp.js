@@ -15,7 +15,7 @@ class RNApp extends Component {
 
     connection.connect().then((ob) => {
       console.log('done');
-    })
+    });
   }
 
   render: Function = () => {

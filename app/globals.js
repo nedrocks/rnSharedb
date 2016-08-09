@@ -20,7 +20,7 @@
 //   connection,
 // }
 
-//const racerBrowserChannel = require('racer-browserchannel/lib/browserStandalone');
+const racerBrowserChannel = require('racer-browserchannel/lib/browserStandalone');
 const racer = require('racer');
 
 class Connection {
@@ -30,26 +30,28 @@ class Connection {
   port: number;
   path: string;
 
-  model: ?Object;
+  model: Object;
 
   constructor(domain: string, port: number, path: string) {
     this.domain = domain;
     this.port = port;
     this.path = path;
-    this.model = null;
   }
 
   connect: Function = (): Promise<Object> => {
     const elem = `http://${this.domain}:${this.port}/${this.path}.json`;
     return fetch(elem)
-      .then((response) => response.json())
+      .then((response) => {
+        const json = response.json();
+        return json;
+      })
       .then((responseJson) => {
         responseJson.browserChannel = {
           base: `http://${this.domain}:${this.port}/${this.path}`,
         }
         this.model = racer.createModel(responseJson);
         this.model.at('_page.room');
-        return this.model;
+        return {};
       }).catch((error) => {
         console.log(error);
       });

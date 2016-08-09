@@ -2,14 +2,8 @@
  * @flow
  */
 
- import React, { Component } from 'react';
- import {
-   AppRegistry,
-   StyleSheet,
-   Text,
-   View
- } from 'react-native';
+require('./shim');
+const reactNative = require('react-native');
+const App = require('./app/containers/app').default;
 
- import App from './app/containers/app';
-
- AppRegistry.registerComponent('rnRacer', () => App);
+reactNative.AppRegistry.registerComponent('rnRacer', () => App);
